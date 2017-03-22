@@ -20,6 +20,6 @@ docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_n
 docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot join -1 1 -2 1 REGION_1_satMutOligos_filtered.tsv REGION_1_ontargetPrimers.tsv -o 2.1,2.2,2.3,2.4,2.5,2.6,2.7 > REGION_1_ontargetPrimers_filtered.tsv
 
 #CRISPRESSO TESTING
-docker  run -v $PWD/amplicon_data -w /DATA lucapinello/crispor_crispresso_nat_prot  CRISPResso -r1 reads1.fastq.gz -r2 reads2.fastq.gz -a AATGTCCCCCAATGGGAAGTTCATCTGGCACTGCCCACAGGTGAGGAGGTCATGATCCCCTTCTGGAGCTCCCAACGGGCCGTGGTCTGGTTCATCATCTGTAAGAATGGCTTCAAGAGGCTCGGCTGTGGTT --g TGAACCAGACCACGGCCCGT -s 20 -q 30 -n BCL11A_exon2
+docker  run -v $PWD/amplicon_data:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot  CRISPResso -r1 reads1.fastq.gz -r2 reads2.fastq.gz -a AATGTCCCCCAATGGGAAGTTCATCTGGCACTGCCCACAGGTGAGGAGGTCATGATCCCCTTCTGGAGCTCCCAACGGGCCGTGGTCTGGTTCATCATCTGTAAGAATGGCTTCAAGAGGCTCGGCTGTGGTT --g TGAACCAGACCACGGCCCGT -s 20 -q 30 -n BCL11A_exon2
 docker run -v $PWD/sgRNA_data:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot CRISPRessoCount -r L3_NGG_HM_Plasmid.fastq.gz -s 20 -q 30 -f library_NGG.txt -t GTTTTAGAGCTAGAAATAGC -l 20 --name NGG_HM_PLASMID
 
