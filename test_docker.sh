@@ -16,7 +16,7 @@ docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_n
 
 #create filtered files for the experiment
 docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot bash -c "join -1 1 -2 1 REGION_1_satMutOligos_filtered.tsv REGION_1_ontargetAmplicons.tsv -o 2.1,2.2,2.3 > CRISPRessoPooled_amplicons.tsv"
-docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot bash -c "join -1 1 -2 1 REGION_1_satMutOligos_filtered.tsv REGION_1_ontargetAmplicons.tsv -o 2.3 > CRISPRessoCounts_sgRNA.tsv"
+docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot bash -c "join -1 1 -2 1 REGION_1_satMutOligos_filtered.tsv REGION_1_ontargetAmplicons.tsv -o 2.3 | sed 1d > CRISPRessoCounts_sgRNA.tsv"
 docker run -v $PWD/crispor_data/:/DATA -w /DATA lucapinello/crispor_crispresso_nat_prot bash -c "join -1 1 -2 1 REGION_1_satMutOligos_filtered.tsv REGION_1_ontargetPrimers.tsv -o 2.1,2.2,2.3,2.4,2.5,2.6,2.7 > REGION_1_ontargetPrimers_filtered.tsv"
 
 #CRISPRESSO TESTING
