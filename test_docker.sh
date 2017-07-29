@@ -1,11 +1,11 @@
 #download container
-#docker pull pinellolab/crispor_crispresso_nat_prot
+docker pull pinellolab/crispor_crispresso_nat_prot
 
 #CRISPOR TESTING
 
 #download genome
-#mkdir crispor_genomes
-#docker  run -v  $PWD/crispor_genomes:/crisporWebsite/genomes pinellolab/crispor_crispresso_nat_prot downloadGenome hg19 /crisporWebsite/genomes
+mkdir crispor_genomes
+docker  run -v  $PWD/crispor_genomes:/crisporWebsite/genomes pinellolab/crispor_crispresso_nat_prot downloadGenome hg19 /crisporWebsite/genomes
 
 
 #design guides
